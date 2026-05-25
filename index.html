@@ -525,7 +525,7 @@
         /* ── Two-path (PFA / Fleet) ── */
         .paths-section {
             padding: 5rem 2rem;
-            max-width: 1100px;
+            max-width: 1300px;
             margin: 0 auto;
         }
 
@@ -551,6 +551,10 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
+        }
+
+        .paths-grid.three-col {
+            grid-template-columns: repeat(3, 1fr);
         }
 
         .path-box {
@@ -582,6 +586,10 @@
             background: linear-gradient(90deg, transparent, var(--price-gold), transparent);
         }
 
+        .path-box.admin::before {
+            background: linear-gradient(90deg, transparent, #7c9cff, transparent);
+        }
+
         .path-badge {
             display: inline-flex;
             align-items: center;
@@ -605,6 +613,12 @@
             background: rgba(240,201,75,0.1);
             color: var(--price-gold);
             border: 1px solid rgba(240,201,75,0.2);
+        }
+
+        .admin .path-badge {
+            background: rgba(124,156,255,0.1);
+            color: #7c9cff;
+            border: 1px solid rgba(124,156,255,0.2);
         }
 
         .path-box h3 {
@@ -661,6 +675,11 @@
             color: var(--price-gold);
         }
 
+        .admin .path-benefit .check {
+            background: rgba(124,156,255,0.15);
+            color: #7c9cff;
+        }
+
         .path-benefit span {
             font-size: 0.95rem;
             color: var(--text-secondary);
@@ -703,6 +722,11 @@
             color: var(--price-gold);
         }
 
+        .admin .path-step-num {
+            border: 1.5px solid #7c9cff;
+            color: #7c9cff;
+        }
+
         .path-step-content h4 {
             font-size: 0.95rem;
             font-weight: 600;
@@ -713,6 +737,10 @@
             font-size: 0.88rem;
             color: var(--text-secondary);
             line-height: 1.55;
+        }
+
+        @media (max-width: 1024px) {
+            .paths-grid.three-col { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 768px) {
@@ -787,49 +815,53 @@
         <div class="price-card reveal">
             <div class="price-label">Chirie săptămânală</div>
             <div class="price-amount">715 RON</div>
-            <div class="price-period">pe săptămână</div>
+            <div class="price-period">pe săptămână, TVA inclus</div>
             <div class="price-divider"></div>
             <div class="price-condition">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                <span>Condiție: minim 100 curse / săptămână</span>
+                <span>Condiție: minim 100 curse Bolt / săptămână</span>
             </div>
-            <p class="price-deposit">Depozit la preluare: <strong>1.000 RON</strong> (rambursabil)</p>
+            <div class="price-condition" style="margin-top: 0.75rem; background: rgba(240,201,75,0.06); border-color: rgba(240,201,75,0.15);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--price-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <span style="color: var(--price-gold);">Bonus: 200 RON/lună la 500 curse/lună</span>
+            </div>
+            <p class="price-deposit">Fără 100 curse/săptămână: <strong>1.210 RON/săptămână</strong>, TVA inclus</p>
         </div>
     </section>
 
     <!-- ══════ FEATURES ══════ -->
     <section class="features">
-        <h2 class="features-title reveal">De ce <em>această ofertă?</em></h2>
+        <h2 class="features-title reveal">Avantaje să închiriezi prin <img src="autonom-logo.png" alt="Autonom" style="height: 2.2em; vertical-align: middle; margin-top: -1.6em; display: inline-block;"></h2>
         <div class="features-grid">
             <div class="feature-card reveal">
                 <div class="feature-icon">🚗</div>
-                <h3>Mașină nouă, 2026</h3>
-                <p>Toyota Corolla 2026 Hybrid + GPL — consum extrem de redus, fiabilitate legendară și acces direct la cursele Comfort pe Bolt.</p>
+                <h3>Chirie avantajoasă pentru o mașină nouă, cu GPL</h3>
+                <p>Ai acces la o Toyota Corolla Hybrid + GPL, pregătită pentru activitate zilnică pe aplicație, fără să investești în achiziția mașinii.</p>
             </div>
             <div class="feature-card reveal">
                 <div class="feature-icon">⭐</div>
-                <h3>Acces curse Comfort</h3>
-                <p>Cu o mașină nouă și premium, primești curse Comfort care plătesc mai bine. Rating mai mare, câștig mai mare.</p>
-            </div>
-            <div class="feature-card reveal">
-                <div class="feature-icon">⛽</div>
-                <h3>Hybrid + GPL</h3>
-                <p>Motorizare hibridă combinată cu GPL — consum minim, costuri de carburant reduse drastic față de o mașină clasică.</p>
-            </div>
-            <div class="feature-card reveal">
-                <div class="feature-icon">💰</div>
-                <h3>Doar ~5,5 RON/cursă</h3>
-                <p>La 100 curse pe săptămână, costul efectiv per cursă e de aproximativ 5,5 RON. Restul e profitul tău.</p>
+                <h3>Acces la curse mai bine plătite</h3>
+                <p>Mașina este eligibilă pentru categoria Comfort pe Bolt, ceea ce poate însemna curse cu valoare mai mare.</p>
             </div>
             <div class="feature-card reveal">
                 <div class="feature-icon">🛡️</div>
-                <h3>Risc limitat la accidente</h3>
-                <p>Dacă produci un accident, plătești maxim 2.500 RON. Dacă altcineva e vinovat, nu plătești nimic.</p>
+                <h3>Costuri auto importante incluse</h3>
+                <p>RCA, CASCO cu franșiză, mentenanță, anvelope, rovinietă, impozit auto, înmatriculare și ITP sunt incluse conform contractului.</p>
             </div>
             <div class="feature-card reveal">
-                <div class="feature-icon">📱</div>
-                <h3>Folosire personală inclusă</h3>
-                <p>Mașina e la dispoziția ta 24/7. O poți folosi și în scop personal, atâta timp cât îndeplinești minimul de curse.</p>
+                <div class="feature-icon">🔄</div>
+                <h3>Flexibilitate dacă nu mai continui</h3>
+                <p>Poți returna mașina conform condițiilor contractuale, fără să rămâi cu o investiție blocată într-o mașină cumpărată.</p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon">🤝</div>
+                <h3>Stabilitate și suport pe termen lung</h3>
+                <p>Poți continua proiectul pe termen lung, iar reparațiile, constatările, mentenanța și verificările periodice sunt gestionate prin Autonom, în service-uri agreate.</p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon">💰</div>
+                <h3>Bonus pentru volum</h3>
+                <p>La 500 curse/lună, primești un bonus de 200 RON, aplicat ca reducere din chirie. Cu cât ești mai activ, cu atât câștigi mai mult.</p>
             </div>
         </div>
     </section>
@@ -863,30 +895,41 @@
 
         <div class="detail-block reveal">
             <h3><span class="icon">⚠️</span> Dacă nu atingi 100 curse într-o săptămână</h3>
-            <p>Chiria pentru săptămâna respectivă va fi de <strong>1.210 RON</strong>. Totuși, dacă la finalul lunii ajungi la 400 curse total, se fac ajustări astfel încât media pe lună să rămână la 715 RON/săptămână.</p>
+            <p>Chiria pentru săptămâna respectivă va fi de <strong>1.210 RON, TVA inclus</strong>.</p>
             <p style="margin-top: 0.75rem;">Dacă timp de <strong>3 săptămâni consecutive</strong> nu se atinge pragul de 100 curse, mașina se retrage.</p>
         </div>
 
         <div class="detail-block reveal">
             <h3><span class="icon">🛡️</span> Protecție în caz de accident</h3>
-            <p>Co-plata maximă în caz de accident din vina ta: <strong>2.500 RON</strong>. Se folosește mai întâi depozitul de 1.000 RON, iar diferența (dacă e cazul) o acoperi tu, maxim 1.500 RON în plus.</p>
+            <p>În cazul unui accident sau incident produs din vina ta sau cu autor necunoscut, răspunderea pentru daună este limitată la <strong>maximum 2.500 RON / eveniment / autovehicul</strong>.</p>
+            <p style="margin-top: 0.75rem;">Dacă valoarea daunei este mai mică de 2.500 RON, plătești doar valoarea reală a daunei. Dacă valoarea daunei este mai mare, plătești maximum 2.500 RON, conform franșizei contractuale.</p>
             <div class="accident-examples">
                 <div class="accident-ex">
                     <div class="label">Daună mică</div>
                     <div class="val">300 RON</div>
-                    <div class="desc">Se folosesc 300 RON din depozit. Nu plătești nimic extra.</div>
+                    <div class="desc">Plătești 300 RON, adică valoarea reală a daunei.</div>
                 </div>
                 <div class="accident-ex">
                     <div class="label">Daună medie</div>
                     <div class="val">1.200 RON</div>
-                    <div class="desc">Depozitul de 1.000 RON + 200 RON achitați de tine.</div>
+                    <div class="desc">Plătești 1.200 RON, adică valoarea reală a daunei.</div>
                 </div>
                 <div class="accident-ex">
                     <div class="label">Daună majoră</div>
                     <div class="val">2.500+ RON</div>
-                    <div class="desc">Depozitul de 1.000 RON + maxim 1.500 RON. Atât, indiferent de valoare.</div>
+                    <div class="desc">Plătești maximum 2.500 RON / eveniment, indiferent dacă dauna este mai mare.</div>
                 </div>
             </div>
+        </div>
+
+        <div class="detail-block reveal">
+            <h3><span class="icon">💳</span> Depozit garanție</h3>
+            <p>La semnarea contractului se achită un depozit de <strong>1.000 RON</strong>. Acesta este returnabil la finalul contractului, dacă mașina este predată în bune condiții și toate obligațiile financiare sunt închise.</p>
+        </div>
+
+        <div class="detail-block reveal">
+            <h3><span class="icon">🎁</span> Bonus lunar pentru volum</h3>
+            <p>Dacă mașina atinge pragul de <strong>500 curse/lună</strong>, se acordă un bonus de <strong>200 RON/lună</strong>, aplicat ca reducere din chirie. Reducerea se aplică în prima săptămână de facturare după atingerea pragului.</p>
         </div>
 
         <div class="detail-block reveal">
@@ -895,32 +938,36 @@
         </div>
     </section>
 
-    <!-- ══════ CUM FUNCȚIONEAZĂ — PFA vs FLOTĂ ══════ -->
+    <!-- ══════ CUM FUNCȚIONEAZĂ — PFA vs FLOTĂ vs ADMIN ══════ -->
     <section class="paths-section" id="cum-functioneaza">
-        <h2 class="paths-title reveal">Cum <em>funcționează?</em></h2>
-        <p class="paths-subtitle reveal">Alege varianta care ți se potrivește. Procesul e simplu în ambele cazuri.</p>
+        <h2 class="paths-title reveal">Alege varianta <em>potrivită pentru tine</em></h2>
+        <p class="paths-subtitle reveal">Indiferent că ești șofer PFA, șofer care are nevoie de flotă sau administrator de flotă/SRL, ai acces la o soluție completă pentru ride-sharing.</p>
 
-        <div class="paths-grid">
+        <div class="paths-grid three-col">
 
             <!-- ── PFA ── -->
             <div class="path-box pfa reveal">
                 <div class="path-badge">👤 Șofer PFA</div>
-                <h3>Activezi pe cont propriu</h3>
-                <p class="path-desc">Ai PFA-ul tău și vrei să închiriezi direct? Contactezi Autonom, semnezi contractul și pornești la drum.</p>
+                <h3>Vrei să lucrezi pe cont propriu?</h3>
+                <p class="path-desc">Dacă ai PFA activ, poți închiria mașina direct și îți gestionezi singur activitatea.</p>
 
                 <div class="path-benefits">
-                    <div class="path-benefits-title">Avantaje PFA</div>
+                    <div class="path-benefits-title">Avantaje</div>
                     <div class="path-benefit">
                         <div class="check">✓</div>
-                        <span>Deduci chiria mașinii din cheltuielile PFA</span>
+                        <span>Venit potențial mai mare — gestionezi direct încasările, cheltuielile și deducerile fiscale</span>
                     </div>
                     <div class="path-benefit">
                         <div class="check">✓</div>
-                        <span>Control total asupra programului tău</span>
+                        <span>Deduci cheltuielile activității — chiria, GPL-ul, spălătoria, telefonul, contabilitatea</span>
                     </div>
                     <div class="path-benefit">
                         <div class="check">✓</div>
-                        <span><!-- Beneficiu PFA de completat --></span>
+                        <span>Control total asupra programului — lucrezi pe cont propriu, fără dependență de un administrator</span>
+                    </div>
+                    <div class="path-benefit">
+                        <div class="check">✓</div>
+                        <span>Contract direct cu Autonom, fără intermediere prin flotă</span>
                     </div>
                 </div>
 
@@ -935,22 +982,36 @@
                 <div class="path-step">
                     <div class="path-step-num">2</div>
                     <div class="path-step-content">
-                        <h4>Pregătește documentele</h4>
-                        <p>Buletin / CI, permis categoria B valid, cont activ de șofer Bolt și PFA activ.</p>
+                        <h4>Înființează PFA-ul, dacă nu ai deja</h4>
+                        <p>Dacă ai nevoie de suport pentru înființare, poți contacta Pick.</p>
                     </div>
                 </div>
                 <div class="path-step">
                     <div class="path-step-num">3</div>
                     <div class="path-step-content">
-                        <h4>Semnezi contractul și plătești depozitul</h4>
-                        <p>Contract simplu, transparent. Depozitul de 1.000 RON se achită la preluare.</p>
+                        <h4>Pregătește documentele</h4>
+                        <p>CI, permis categoria B valid, cont activ de șofer Bolt și PFA activ.</p>
                     </div>
                 </div>
                 <div class="path-step">
                     <div class="path-step-num">4</div>
                     <div class="path-step-content">
-                        <h4>Obții ARR-ul și începi cursele</h4>
-                        <p>Mașina vine verificată și pregătită. Obții ARR-ul și pornești cu acces la curse Comfort.</p>
+                        <h4>Semnezi contractul și achiți depozitul</h4>
+                        <p>Contract simplu, transparent. Depozitul de 1.000 RON se achită la semnare.</p>
+                    </div>
+                </div>
+                <div class="path-step">
+                    <div class="path-step-num">5</div>
+                    <div class="path-step-content">
+                        <h4>Depui documentele la ARR</h4>
+                        <p>Obții copia conformă și ecusonul necesare activității.</p>
+                    </div>
+                </div>
+                <div class="path-step">
+                    <div class="path-step-num">6</div>
+                    <div class="path-step-content">
+                        <h4>Preiei mașina și începi activitatea</h4>
+                        <p>Mașina vine verificată și pregătită. Pornești cu acces la curse Comfort.</p>
                     </div>
                 </div>
 
@@ -963,22 +1024,26 @@
             <!-- ── FLOTĂ ── -->
             <div class="path-box fleet reveal">
                 <div class="path-badge">🚐 Șofer în flotă</div>
-                <h3>Activezi prin flotă</h3>
-                <p class="path-desc">Faci parte dintr-o flotă? Vorbește cu administratorul flotei și el va aranja totul cu Autonom.</p>
+                <h3>Vrei să începi mai simplu?</h3>
+                <p class="path-desc">Dacă nu ai PFA sau nu vrei să te ocupi singur de partea administrativă, poți activa printr-o flotă.</p>
 
                 <div class="path-benefits">
-                    <div class="path-benefits-title">Avantaje flotă</div>
+                    <div class="path-benefits-title">Avantaje</div>
                     <div class="path-benefit">
                         <div class="check">✓</div>
-                        <span>Poți face schimburi pe vehicul cu alți șoferi din flotă</span>
+                        <span>Nu ai nevoie de PFA propriu — lucrezi prin structura flotei</span>
                     </div>
                     <div class="path-benefit">
                         <div class="check">✓</div>
-                        <span>Administratorul se ocupă de birocrație</span>
+                        <span>Ai mai puțină birocrație — administratorul se ocupă de contract și documente</span>
                     </div>
                     <div class="path-benefit">
                         <div class="check">✓</div>
-                        <span><!-- Beneficiu flotă de completat --></span>
+                        <span>Variantă simplă de start — potrivită dacă vrei să începi fără obligații administrative</span>
+                    </div>
+                    <div class="path-benefit">
+                        <div class="check">✓</div>
+                        <span>Suport din partea flotei — pentru activare, documente și situații administrative</span>
                     </div>
                 </div>
 
@@ -994,14 +1059,92 @@
                     <div class="path-step-num">2</div>
                     <div class="path-step-content">
                         <h4>Administratorul contactează Autonom</h4>
-                        <p>Se ocupă de contract, documente și preluarea mașinii în numele flotei.</p>
+                        <p>Se ocupă de contract, documente și comunicarea cu Autonom.</p>
                     </div>
                 </div>
                 <div class="path-step">
                     <div class="path-step-num">3</div>
                     <div class="path-step-content">
+                        <h4>Se pregătesc documentele necesare</h4>
+                        <p>Administratorul organizează tot ce e necesar pentru preluare.</p>
+                    </div>
+                </div>
+                <div class="path-step">
+                    <div class="path-step-num">4</div>
+                    <div class="path-step-content">
+                        <h4>Depunere documente la ARR</h4>
+                        <p>Se obțin copia conformă și ecusonul necesare activității.</p>
+                    </div>
+                </div>
+                <div class="path-step">
+                    <div class="path-step-num">5</div>
+                    <div class="path-step-content">
                         <h4>Primești mașina și începi cursele</h4>
-                        <p>Mașina e gata. Obții ARR-ul și pornești la drum cu acces la curse Comfort.</p>
+                        <p>Mașina e gata. Pornești la drum cu acces la curse Comfort.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ── ADMINISTRATOR FLOTĂ / SRL ── -->
+            <div class="path-box admin reveal">
+                <div class="path-badge">🏢 Administrator flotă / SRL</div>
+                <h3>Vrei să îți crești flota?</h3>
+                <p class="path-desc">Dacă ai SRL, poți închiria mașini prin Autonom și le poți introduce rapid în activitate, fără să le cumperi.</p>
+
+                <div class="path-benefits">
+                    <div class="path-benefits-title">Avantaje</div>
+                    <div class="path-benefit">
+                        <div class="check">✓</div>
+                        <span>Crești rapid, fără să cumperi mașinile — fără investiție mare, leasing sau avansuri</span>
+                    </div>
+                    <div class="path-benefit">
+                        <div class="check">✓</div>
+                        <span>Reduci presiunea pe cash-flow — costurile sunt predictibile și ușor de planificat</span>
+                    </div>
+                    <div class="path-benefit">
+                        <div class="check">✓</div>
+                        <span>Testezi sau extinzi proiectul mai ușor — adaugi mașini treptat, în funcție de cerere</span>
+                    </div>
+                    <div class="path-benefit">
+                        <div class="check">✓</div>
+                        <span>Mașini eficiente pentru volum mare — Toyota Corolla Hybrid + GPL, costuri operaționale controlate</span>
+                    </div>
+                </div>
+
+                <div class="path-steps-title">Pași de urmat</div>
+                <div class="path-step">
+                    <div class="path-step-num">1</div>
+                    <div class="path-step-content">
+                        <h4>Contactează Autonom</h4>
+                        <p>Discută oferta și transmite numărul de mașini dorit.</p>
+                    </div>
+                </div>
+                <div class="path-step">
+                    <div class="path-step-num">2</div>
+                    <div class="path-step-content">
+                        <h4>Transmite documentele firmei</h4>
+                        <p>Pregătește actele SRL-ului necesar pentru contractare.</p>
+                    </div>
+                </div>
+                <div class="path-step">
+                    <div class="path-step-num">3</div>
+                    <div class="path-step-content">
+                        <h4>Semnezi contractul și achiți depozitul</h4>
+                        <p>1.000 RON / mașină, returnabil la finalul contractului.</p>
+                    </div>
+                </div>
+                <div class="path-step">
+                    <div class="path-step-num">4</div>
+                    <div class="path-step-content">
+                        <h4>Depui documentele la ARR</h4>
+                        <p>Obții copiile conforme și ecusoanele pentru fiecare mașină.</p>
+                    </div>
+                </div>
+                <div class="path-step">
+                    <div class="path-step-num">5</div>
+                    <div class="path-step-content">
+                        <h4>Preiei mașinile și le aloci șoferilor</h4>
+                        <p>Mașinile sunt gata de activitate. Le distribui în flotă și pornești proiectul.</p>
                     </div>
                 </div>
             </div>
@@ -1015,17 +1158,22 @@
 
         <div class="faq-item reveal">
             <div class="faq-q">Ce se întâmplă dacă nu fac 100 de curse într-o săptămână?</div>
-            <div class="faq-a">Chiria pentru acea săptămână va fi de 1.210 RON. Dar dacă la finalul lunii ajungi la 400 de curse total, se fac ajustări astfel încât media pe lună să rămână la 715 RON/săptămână. Dacă 3 săptămâni consecutive nu se atinge pragul, mașina se retrage.</div>
+            <div class="faq-a">Chiria pentru acea săptămână va fi de 1.210 RON, TVA inclus. Dacă 3 săptămâni consecutive nu se atinge pragul, mașina se retrage.</div>
         </div>
 
         <div class="faq-item reveal">
             <div class="faq-q">De ce există o limită de kilometri?</div>
-            <div class="faq-a">Limita de kilometri ne permite să oferim un preț cât mai mic pentru chirie. Analizele arată că distanțele medii parcurse de șoferii din București se încadrează confortabil în aceste limite. Poți folosi mașina și în interes personal, dar depășirea limitei aduce un cost suplimentar de 0,20 RON/km.</div>
+            <div class="faq-a">Limita de kilometri ne permite să oferim un preț cât mai mic pentru chirie. Analizele arată că distanțele medii parcurse de șoferii din București se încadrează confortabil în aceste limite. Poți folosi mașina și în interes personal, dar depășirea limitei aduce un cost suplimentar de 0,20 RON/km. În plus, mașina vine cu costuri auto importante incluse, precum mentenanță, RCA, CASCO cu franșiză, anvelope, rovinietă, impozit auto, înmatriculare și ITP.</div>
         </div>
 
         <div class="faq-item reveal">
             <div class="faq-q">Ce se întâmplă dacă am un accident?</div>
-            <div class="faq-a">Plătești maxim 2.500 RON doar dacă ești vinovat. Suma se acoperă din depozitul de 1.000 RON, plus maxim 1.500 RON suplimentar. Dacă altcineva e vinovat sau mașina e lovită în parcare, nu plătești nimic.</div>
+            <div class="faq-a">Anunți imediat Autonom sau, după caz, managerul de flotă. Dacă accidentul <strong>nu este din vina ta</strong>, dauna se recuperează prin RCA-ul șoferului vinovat și nu plătești franșiza. Dacă accidentul este <strong>din vina ta</strong> sau are <strong>autor necunoscut</strong>, plătești valoarea daunei, dar maximum <strong>2.500 RON / eveniment</strong>. Constatările și reparațiile sunt gestionate prin Autonom, în service-uri agreate.</div>
+        </div>
+
+        <div class="faq-item reveal">
+            <div class="faq-q">Există bonus de colant?</div>
+            <div class="faq-a">Nu există bonus separat pentru colant în acest proiect. Beneficiul este deja inclus în chiria redusă: dacă mașina efectuează minimum 100 curse Bolt pe săptămână, chiria scade la 715 RON/săptămână, TVA inclus. Dacă pragul nu este atins, se aplică chiria integrală de 1.210 RON/săptămână, TVA inclus. În plus, la atingerea pragului de 500 curse/lună, se acordă un bonus de 200 RON/lună, aplicat ca reducere din chirie.</div>
         </div>
 
         <div class="faq-item reveal">
@@ -1035,7 +1183,7 @@
 
         <div class="faq-item reveal">
             <div class="faq-q">Ce documente am nevoie?</div>
-            <div class="faq-a">Buletin sau carte de identitate, permis de conducere categoria B valid și cont activ de șofer Bolt. Atât!</div>
+            <div class="faq-a">Carte de identitate, permis de conducere categoria B valid și cont activ de șofer Bolt. Pentru PFA: PFA activ. Pentru flotă: administratorul se ocupă de documentele necesare.</div>
         </div>
 
         <div class="faq-item reveal">
